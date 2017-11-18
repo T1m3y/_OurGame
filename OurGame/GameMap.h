@@ -6,7 +6,6 @@
 #include<vector>
 #include<list>
 
-typedef uint32_t Index;
 
 class MapElem;
 template<typename Cont> class MapElemRef;
