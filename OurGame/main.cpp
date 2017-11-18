@@ -19,8 +19,8 @@ int main()
 			if (event.type == sf::Event::KeyPressed)
 				if (event.key.code == sf::Keyboard::A)
 					if(shape.getFillColor() != sf::Color::Green)
-						shape.setFillColor(sf::Color::Red);
-					else shape.setFillColor(sf::Color::Green);
+						shape.setFillColor(sf::Color::Green);
+					else shape.setFillColor(sf::Color::Red);
 
 
 		}
