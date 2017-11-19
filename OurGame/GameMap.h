@@ -16,7 +16,7 @@ class GameMap
 private:
 	typedef std::list<MapEntity> MapPosContainer;
 	typedef std::vector<MapPosContainer> Map1DContainer;
-	typedef std::vector<Map1DContainer> Map2DContainer;			
+	typedef std::vector<Map1DContainer> Map2DContainer;	
 
 	Map2DContainer map;
 
@@ -31,12 +31,12 @@ public:
 	
 	void insertEntity(MapEntity& ent)
 	{
-
+		map.at(5).at(3).emplace_back();
 	}
 
 	void removeEntity(MapEntity& ent)
 	{
-
+		
 	}
 
 
@@ -85,7 +85,7 @@ public:
 
 	~MapEntity()
 	{
-		(*map)
+		//(*map)
 	}
 
 	enum MapEntityType
