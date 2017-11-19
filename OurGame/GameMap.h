@@ -13,13 +13,13 @@ template<typename Cont> class MapElemRef;
 class GameMap
 {
 private:
-	//typedef std::uint32_t Index;
 	typedef std::list<MapElem> MapInnerContList;
-	typedef std::vector<std::list<MapElem>> MapInnerCont;
-	typedef std::vector<MapInnerCont> MapCont;
+	typedef std::vector<MapInnerContList> MapInnerCont;
+	typedef std::vector<MapInnerCont> MapCont;			
 
 	MapCont& map;
 
+	typedef decltype(map.size()) Index;
 public:
 	GameMap(Index sizeX, Index sizeY) : map(MapCont(sizeX, MapInnerCont(sizeY, MapInnerContList())))
 	{
