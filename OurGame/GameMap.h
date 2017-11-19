@@ -38,8 +38,8 @@ public:
 
 	void removeEntity(MapEntityRef ent)
 	{
-		auto begin = map.at(ent->getPosition().x).at(ent->getPosition().y).begin;
-		auto end = map.at(ent->getPosition().x).at(ent->getPosition().y).end;
+		auto begin = map.at(ent->getPosition().x).at(ent->getPosition().y).begin();
+		auto end = map.at(ent->getPosition().x).at(ent->getPosition().y).end();
 
 		auto entIt = std::find(begin, end, ent);
 		map.at(ent->getPosition().x).at(ent->getPosition().y).erase(entIt);
