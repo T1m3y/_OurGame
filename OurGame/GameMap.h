@@ -14,13 +14,15 @@ template<typename Cont> class MapElemRef;
 class GameMap
 {
 private:
-	typedef std::list<MapEntity> MapPosContainer;
+	typedef MapEntity* MapEntityRef;
+	typedef std::list<MapEntityRef> MapPosContainer;
 	typedef std::vector<MapPosContainer> Map1DContainer;
-	typedef std::vector<Map1DContainer> Map2DContainer;			
+	typedef std::vector<Map1DContainer> Map2DContainer;		
 
 	Map2DContainer map;
 
 	typedef decltype(map.size()) Index;
+
 public:
 	typedef sf::Vector2f Position_t;
 
@@ -29,7 +31,7 @@ public:
 		
 	}
 	
-	void insertEntity(MapEntity& ent)
+	void insertEntity(MapEntityRef ent)
 	{
 
 	}
@@ -38,39 +40,10 @@ public:
 	{
 
 	}
-
-
 };
 
-////References an Object inside a "Cont"-container
-//template<typename Cont>
-//class MapElemRef
-//{
-//private:
-//	//Container Holding the MapElem
-//	std::weak_ptr<Cont> cont;
-//	std::iterator it;
-//
-//public:
-//	MapElemRef(std::shared_ptr<Cont>& containerPtr, std::iterator& it)
-//	{
-//		cont = containerPtr;
-//		this->it = it;
-//	}
-//
-//	auto get()
-//	{
-//		return *it;
-//	}
-//};
-//
-//template<typename Cont>
-//MapElemRef<Cont> makeMapElemRef(Cont container, Index index)
-//{
-//	return MapElemRef<Cont>(container, index);
-//}
 
-//all classes whose objects need to be inside GameMap need to derive from this
+
 class MapEntity : Entity
 {
 private:
