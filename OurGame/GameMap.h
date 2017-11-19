@@ -7,13 +7,13 @@
 #include<list>
 
 
-class MapElem;
+class MapEntity;
 template<typename Cont> class MapElemRef;
 
 class GameMap
 {
 private:
-	typedef std::list<MapElem> MapPosContainer;
+	typedef std::list<MapEntity> MapPosContainer;
 	typedef std::vector<MapPosContainer> Map1DContainer;
 	typedef std::vector<Map1DContainer> Map2DContainer;			
 
@@ -58,7 +58,7 @@ public:
 //}
 
 //all classes whose objects need to be inside GameMap need to derive from this
-class MapElem
+class MapEntity
 {
 private:
 	enum MapElemType;
@@ -78,7 +78,7 @@ public:
 		Environment
 	};
 
-	MapElem(MapElemType type, Position_t pos)
+	MapEntity(MapElemType type, Position_t pos)
 	{
 		this->type = type;
 		mapPos = pos;
