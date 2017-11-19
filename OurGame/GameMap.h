@@ -61,8 +61,8 @@ public:
 class MapEntity
 {
 private:
-	enum MapElemType;
-	MapElemType type;
+	enum MapEntityType;
+	MapEntityType type;
 
 protected:
 	//typedef sf::Vector2i Position_t;
@@ -71,14 +71,14 @@ protected:
 
 public:
 
-	enum MapElemType
+	enum MapEntityType
 	{
 		Unit,
 		Building,
 		Environment
 	};
 
-	MapEntity(MapElemType type, Position_t pos)
+	MapEntity(MapEntityType type, Position_t pos)
 	{
 		this->type = type;
 		mapPos = pos;
